@@ -18,14 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import SimpleRouter
 
-from table.views import TableView
+from table.views import TableViewer, table_app
 
 router = SimpleRouter()
 
-router.register('api/table', TableView)
+router.register('api/table', TableViewer)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('table_app/', table_app),
 ]
 
 urlpatterns += router.urls
